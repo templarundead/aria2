@@ -53,13 +53,13 @@ namespace aria2 {
 void showVersion()
 {
   std::cout
-      << PACKAGE << _(" version ") << PACKAGE_VERSION << "\n"
-      << _("Enabled Features") << ":\n " << featureSummary() << "\n"
+      << PACKAGE << _(" version ") << PACKAGE_VERSION << "\n "
+      << _("Enabled Features") << ":\n " << featureSummary() << "\n "
       << _("Hash Algorithms") << ":\n "
-      << MessageDigest::getSupportedHashTypeString() << "\n"
-      << _("Libraries") << ":\n " << usedLibs() << "\n"
-      << _("Compiler") << ":\n " << usedCompilerAndPlatform() << "\n"
-      << _("System") << ":\n " << getOperatingSystemInfo() << "\n";
+      << MessageDigest::getSupportedHashTypeString() << "\n "
+      << _("Libraries") << ":\n " << usedLibs() << "\n "
+      << _("Compiler") << ":\n " << usedCompilerAndPlatform() << "\n "
+      << _("System") << ":\n " << getOperatingSystemInfo() << "\n ";
 }
 
 void showUsage(const std::string& keyword,
