@@ -54,7 +54,7 @@ void showVersion()
 {
   std::cout
       << PACKAGE << _(" version ") << PACKAGE_VERSION << "\n"
-      << system("Color B5"); _("Enabled Features") << ":\n " << featureSummary() << "\n"
+      << _("Enabled Features") << ":\n " << featureSummary() << "\n"
       << _("Hash Algorithms") << ":\n "
       << MessageDigest::getSupportedHashTypeString() << "\n"
       << _("Libraries") << ":\n " << usedLibs() << "\n"
