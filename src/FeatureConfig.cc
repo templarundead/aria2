@@ -238,7 +238,7 @@ std::string usedLibs()
 #endif // HAVE_LIBCARES
 
 #ifdef HAVE_LIBSSH2
-  res += "libssh2/" LIBSSH2_VERSION "\n ";
+  res += "libssh2/" LIBSSH2_VERSION;
 #endif // HAVE_LIBSSH2
 
   if (!res.empty()) {
@@ -291,11 +291,11 @@ std::string usedCompilerAndPlatform()
 
 #endif // !defined(__GNUG__)
 
-  rv << "\n  built by  " << BUILD;
+  rv << "\n built by  " << BUILD;
   if (strcmp(BUILD, TARGET)) {
-    rv << "\n  targeting " << TARGET;
+    rv << "\n targeting " << TARGET;
   }
-  rv << "\n  on        " << __DATE__ << "\n" << __TIME__;
+  rv << "\n  on " << __DATE__ << "\n" << __TIME__;
 
   return rv.str();
 }
