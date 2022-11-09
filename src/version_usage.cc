@@ -54,12 +54,12 @@ void showVersion()
 {
   std::cout
       << PACKAGE << _(" version ") << PACKAGE_VERSION << "\n"
-      << _("Enabled Features") << ": " << featureSummary() << "\n"
-      << _("Hash Algorithms") << ": "
+      << _("Enabled Features") << ":\n" << featureSummary() << "\n"
+      << _("Hash Algorithms") << ":\n"
       << MessageDigest::getSupportedHashTypeString() << "\n"
-      << _("Libraries") << ": " << usedLibs() << "\n"
-      << _("Compiler") << ": " << usedCompilerAndPlatform() << "\n"
-      << _("System") << ": " << getOperatingSystemInfo() << "\n";
+      << _("Libraries") << ":\n" << usedLibs() << "\n"
+      << _("Compiler") << ":\n" << usedCompilerAndPlatform() << "\n"
+      << _("System") << ":\n" << getOperatingSystemInfo() << "\n";
 }
 
 void showUsage(const std::string& keyword,
