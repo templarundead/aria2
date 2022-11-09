@@ -199,7 +199,7 @@ std::string usedLibs()
 #endif // HAVE_LIBXML2
 #ifdef HAVE_LIBEXPAT
   res += fmt("expat/%d.%d.%d ", XML_MAJOR_VERSION, XML_MINOR_VERSION,
-             XML_MICRO_VERSION);
+             XML_MICRO_VERSION) "\n";
 #endif // HAVE_LIBEXPAT
 #ifdef HAVE_SQLITE3
   res += "sqlite3/" SQLITE_VERSION "\n";
