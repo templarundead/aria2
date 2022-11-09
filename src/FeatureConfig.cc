@@ -104,7 +104,7 @@ std::string featureSummary()
     for (int i = first + 1; i < MAX_FEATURE; ++i) {
       const char* name = strSupportedFeature(i);
       if (name) {
-        s += ", ";
+        s += "\n ";
         s += name;
       }
     }
@@ -192,17 +192,17 @@ std::string usedLibs()
 {
   std::string res;
 #ifdef HAVE_ZLIB
-  res += "zlib/" ZLIB_VERSION " ";
+  res += "zlib/" ZLIB_VERSION "\n";
 #endif // HAVE_ZLIB
 #ifdef HAVE_LIBXML2
-  res += "libxml2/" LIBXML_DOTTED_VERSION " ";
+  res += "libxml2/" LIBXML_DOTTED_VERSION "\n ";
 #endif // HAVE_LIBXML2
 #ifdef HAVE_LIBEXPAT
   res += fmt("expat/%d.%d.%d ", XML_MAJOR_VERSION, XML_MINOR_VERSION,
              XML_MICRO_VERSION);
 #endif // HAVE_LIBEXPAT
 #ifdef HAVE_SQLITE3
-  res += "sqlite3/" SQLITE_VERSION " ";
+  res += "sqlite3/" SQLITE_VERSION "\n";
 #endif // HAVE_SQLITE3
 #ifdef HAVE_APPLETLS
   res += "AppleTLS ";
@@ -211,7 +211,7 @@ std::string usedLibs()
   res += "WinTLS ";
 #endif // HAVE_WINTLS
 #ifdef HAVE_LIBGNUTLS
-  res += "GnuTLS/" GNUTLS_VERSION " ";
+  res += "GnuTLS/" GNUTLS_VERSION "\n";
 #endif // HAVE_LIBGNUTLS
 #ifdef HAVE_OPENSSL
   res += fmt("OpenSSL/%ld.%ld.%ld", OPENSSL_VERSION_NUMBER >> 28,
@@ -220,7 +220,7 @@ std::string usedLibs()
   if ((OPENSSL_VERSION_NUMBER >> 4) & 0xff) {
     res += 'a' + ((OPENSSL_VERSION_NUMBER >> 4) & 0xff) - 1;
   }
-  res += " ";
+  res += "\n";
 #endif // HAVE_OPENSSL
 #ifdef HAVE_LIBNETTLE
   // No library version in header files.
@@ -231,14 +231,14 @@ std::string usedLibs()
              __GNU_MP_VERSION_PATCHLEVEL);
 #endif // HAVE_LIBGMP
 #ifdef HAVE_LIBGCRYPT
-  res += "libgcrypt/" GCRYPT_VERSION " ";
+  res += "libgcrypt/" GCRYPT_VERSION "\n";
 #endif // HAVE_LIBGCRYPT
 #ifdef HAVE_LIBCARES
-  res += "c-ares/" ARES_VERSION_STR " ";
+  res += "c-ares/" ARES_VERSION_STR "\n";
 #endif // HAVE_LIBCARES
 
 #ifdef HAVE_LIBSSH2
-  res += "libssh2/" LIBSSH2_VERSION " ";
+  res += "libssh2/" LIBSSH2_VERSION "\n";
 #endif // HAVE_LIBSSH2
 
   if (!res.empty()) {
@@ -295,7 +295,7 @@ std::string usedCompilerAndPlatform()
   if (strcmp(BUILD, TARGET)) {
     rv << "\n  targeting " << TARGET;
   }
-  rv << "\n  on        " << __DATE__ << " " << __TIME__;
+  rv << "\n  on        " << __DATE__ << "\n" << __TIME__;
 
   return rv.str();
 }
@@ -361,7 +361,7 @@ std::string getOperatingSystemInfo()
         !strstr(name.version, name.release) ||
         !strstr(name.version, name.machine)) {
       std::stringstream ss;
-      ss << name.sysname << " " << name.release << " " << name.version << " "
+      ss << name.sysname << "\n" << name.release << "\n" << name.version << "\n"
          << name.machine;
       return ss.str();
     }
