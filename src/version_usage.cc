@@ -59,8 +59,7 @@ void showVersion()
       << MessageDigest::getSupportedHashTypeString() << "\n"
       << _("Libraries") << ": " << usedLibs() << "\n"
       << _("Compiler") << ": " << usedCompilerAndPlatform() << "\n"
-      << _("System") << ": " << getOperatingSystemInfo() << "\n"
-      << "\n";
+      << _("System") << ": " << getOperatingSystemInfo() << "\n";
 }
 
 void showUsage(const std::string& keyword,
