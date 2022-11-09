@@ -60,7 +60,7 @@ void showVersion()
       << _("Libraries") << ": " << usedLibs() << "\n"
       << _("Compiler") << ": " << usedCompilerAndPlatform() << "\n"
       << _("System") << ": " << getOperatingSystemInfo() << "\n"
-      << "\n"
+      << "\n";
 }
 
 void showUsage(const std::string& keyword,
