@@ -198,7 +198,7 @@ std::string usedLibs()
   res += "libxml2/" LIBXML_DOTTED_VERSION "\n ";
 #endif // HAVE_LIBXML2
 #ifdef HAVE_LIBEXPAT
-  res += fmt("expat/%d.%d.%d " XML_MAJOR_VERSION, XML_MINOR_VERSION,
+  res += fmt("expat/%d.%d.%d " "\n" XML_MAJOR_VERSION, XML_MINOR_VERSION,
              XML_MICRO_VERSION);
 #endif // HAVE_LIBEXPAT
 #ifdef HAVE_SQLITE3
