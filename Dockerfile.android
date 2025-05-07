@@ -10,7 +10,7 @@
 #
 # $ sudo docker run --rm -it -v /path/to/dest:/out aria2-android cp /root/build/aria2/src/aria2c /out
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 MAINTAINER Tatsuhiro Tsujikawa
 
 WORKDIR /root
